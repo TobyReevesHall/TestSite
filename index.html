@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
+    <title>Unibrowser</title>
+  </head>
+
+  <body>
+    <script>
+    localStorage.setItem("userType", null);
+    </script>
+    <script src="serverScripts.js"></script>
+    <nav>
+      <div class="menu">
+        <!--This flex container stores the menu items for the page-->
+        <ul class="flex-container">
+          <li class="flex-item"><a href="index.html">Home</a></li>
+          <li class="flex-item"><a href="about.html">About</a></li>
+          <li class="flex-item"><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="header_image">
+      <img src="UniBrowser.jpg" alt="Website logo and title" width="100%">
+    </div>
+
+    <div class ="left-pane">
+      <!--The left pane holds the user login at the top and the guest login at the bottom-->
+      <div class ="lt-pane">
+        <h1>Login</h1>
+        <br><input type="text" id="uName" placeholder="Email" class="textbox"><br>
+        <br><input type="password" id="pass" placeholder="Password" class="textbox"><br>
+        <br>Click <a href = "resetPass.html">Here </a>to reset password.
+        <br>
+        <button type="Button" class="pButton" onclick="loginClick()">
+          Login
+        </button>
+      </div>
+      <div class ="lb-pane">
+        <h1>Guest</h1>
+        <select id="guestTG">
+          <option value="" selected disabled hidden>Tutorial Group</option>
+          <option value="M1">M1</option>
+          <option value="M2">M2</option>
+          <option value="M3">M3</option>
+          <option value="M4">M4</option>
+          <option value="W1">W1</option>
+          <option value="W2">W2</option>
+          <option value="W3">W3</option>
+          <option value="W4">W4</option>
+          <option value="X1">X1</option>
+          <option value="X2">X2</option>
+          <option value="X3">X3</option>
+          <option value="X4">X4</option>
+          <option value="Y1">Y1</option>
+          <option value="Y2">Y2</option>
+          <option value="Y3">Y3</option>
+          <option value="Y4">Y4</option>
+          <option value="Z1">Z1</option>
+          <option value="Z2">Z2</option>
+          <option value="Z3">Z3</option>
+          <option value="Z4">Z4</option>
+        </select>
+        <br>
+        <button type="button" class="yButton" onclick="guestClick()">
+          Continue
+        </button>
+        <br>
+      </div>
+    </div>
+
+    <div class ="right-pane">
+      <!--The right pane holds the signup form-->
+      <h1>Sign Up</h1>
+      <br><input type="text" id="sEmail" placeholder="Email" class="textbox"><br>
+      <br><input type="password" id="sPass" placeholder="Password" class="textbox"><br>
+      <br><input type="password" id="sPassCon" placeholder="Confirm Password" class="textbox"><br>
+      <br>
+      <select id="signUpTG">
+        <option value="" selected disabled hidden>Tutorial Group</option>
+        <option value="M1">M1</option>
+        <option value="M2">M2</option>
+        <option value="M3">M3</option>
+        <option value="M4">M4</option>
+        <option value="W1">W1</option>
+        <option value="W2">W2</option>
+        <option value="W3">W3</option>
+        <option value="W4">W4</option>
+        <option value="X1">X1</option>
+        <option value="X2">X2</option>
+        <option value="X3">X3</option>
+        <option value="X4">X4</option>
+        <option value="Y1">Y1</option>
+        <option value="Y2">Y2</option>
+        <option value="Y3">Y3</option>
+        <option value="Y4">Y4</option>
+        <option value="Z1">Z1</option>
+        <option value="Z2">Z2</option>
+        <option value="Z3">Z3</option>
+        <option value="Z4">Z4</option>
+      </select>
+      <br>
+      <button type="button" class="yButton" onclick="signupClick()">
+        Sign Up
+      </button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer>
+      <p>Developed by W4, The University of Manchester</p>
+    </footer>
+
+  </body>
+</html>

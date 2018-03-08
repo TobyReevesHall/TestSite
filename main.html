@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
+    <title>Unibrowser</title>
+  </head>
+  <body>
+    <script src="serverScripts.js"></script>
+    <div class="header_image">
+      <img src="UniBrowser.jpg" alt="Website logo and title" width="100%">
+    </div>
+    <div class ="sm-left-pane" id="leftPane">
+      <div class ="lt-pane">
+        <h1>My Deadlines</h1>
+        <button type="Button" class="pButton" onclick="previousD()">Previous</button><button type="Button" class="pButton" onclick="nextD()">Next</button>
+        <br>
+        <table class = "deadlines">
+          <tr><td id="d0"></td></tr>
+          <tr><td id="d1"></td></tr>
+          <tr><td id="d2"></td></tr>
+          <tr><td id="d3"></td></tr>
+          <tr><td id="d4"></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class ="ex-right-pane" id = "rightPane">
+      <h1>My Timetable</h1>
+      <button type="Button" class="yButton" onclick="previousT()">Previous</button><button type="Button" class="yButton" onclick="nextT()">Next</button>
+      <table class = "timetable">
+        <tr>
+          <th>Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+        <tr id = "9">
+          <td >9:00 - 10:00</td>
+          <td id = "Monday9" onclick=cellClick(id)></td>
+          <td id = "Tuesday9" onclick=cellClick(id)></td>
+          <td id = "Wednesday9" onclick=cellClick(id)></td>
+          <td id = "Thursday9" onclick=cellClick(id)></td>
+          <td id = "Friday9" onclick=cellClick(id)></td>
+        </tr>
+        <tr id = "10">
+          <td>10:00 - 11:00</td>
+          <td id = "Monday10" onclick=cellClick(id)></td>
+          <td id = "Tuesday10" onclick=cellClick(id)></td>
+          <td id = "Wednesday10" onclick=cellClick(id)></td>
+          <td id = "Thursday10" onclick=cellClick(id)></td>
+          <td id = "Friday10" onclick=cellClick(id)></td>
+        </tr>
+        <tr id = "11">
+          <td >11:00 - 12:00</td>
+          <td id = "Monday11" onclick=cellClick(id)></td>
+          <td id = "Tuesday11" onclick=cellClick(id)></td>
+          <td id = "Wednesday11" onclick=cellClick(id)></td>
+          <td id = "Thursday11" onclick=cellClick(id)></td>
+          <td id = "Friday11" onclick=cellClick(id)></td>
+        </tr>
+        <tr id = "12">
+          <td>12:00 - 13:00</td>
+          <td id = "Monday12" onclick=cellClick(id)></td>
+          <td id = "Tuesday12" onclick=cellClick(id)></td>
+          <td id = "Wednesday12" onclick=cellClick(id)></td>
+          <td id = "Thursday12" onclick=cellClick(id)></td>
+          <td id = "Friday12" onclick=cellClick(id)></td>
+        </tr>
+        <tr id = "13">
+          <td>13:00 - 14:00</td>
+          <td id = "Monday13" onclick=cellClick(id)></td>
+          <td id = "Tuesday13" onclick=cellClick(id)></td>
+          <td id = "Wednesday13" onclick=cellClick(id)></td>
+          <td id = "Thursday13" onclick=cellClick(id)></td>
+          <td id = "Friday13" onclick=cellClick(id)></td>
+        </tr>
+        <tr id = "14">
+          <td>14:00 - 15:00</td>
+          <td id = "Monday14" onclick=cellClick(id)></td>
+          <td id = "Tuesday14" onclick=cellClick(id)></td>
+          <td id = "Wednesday14" onclick=cellClick(id)></td>
+          <td id = "Thursday14" onclick=cellClick(id)></td>
+          <td id = "Friday14" onclick=cellClick(id)></td>
+        </tr>
+        <tr id = "15">
+          <td>15:00 - 16:00</td>
+          <td id = "Monday15" onclick=cellClick(id)></td>
+          <td id = "Tuesday15" onclick=cellClick(id)></td>
+          <td id = "Wednesday15" onclick=cellClick(id)></td>
+          <td id = "Thursday15" onclick=cellClick(id)></td>
+          <td id = "Friday15" onclick=cellClick(id)></td>
+        </tr>
+        <tr id = "16">
+          <td>16:00 - 17:00</td>
+          <td id = "Monday16" onclick=cellClick(id)></td>
+          <td id = "Tuesday16" onclick=cellClick(id)></td>
+          <td id = "Wednesday16" onclick=cellClick(id)></td>
+          <td id = "Thursday16" onclick=cellClick(id)></td>
+          <td id = "Friday16" onclick=cellClick(id)></td>
+        </tr>
+      </table>
+      <div class="Buttons">
+        <button type="button" onclick=addEvent() id='addEvButton'>Add event</button>
+        <button type="button" onclick=deleteEvent() id='delEvButton'>Delete event</button>
+      </div>
+      <div id='addEventForm'>
+        <h1>Add Event</h1>
+        <h2 id="addEvStartTime"></h2>
+        <br><input type="text" id="evName" placeholder="Course Name" class="textbox"><br>
+        <br><input type="text" id="evLocation" placeholder="Event Location" class="textbox"><br>
+        <br><select id="evType">
+          <option value="" selected disabled hidden>Event Type</option>
+          <option value="1">Lecture</option>
+          <option value="2">Lab</option>
+          <option value="3">Examples</option>
+          <option value="4">Tutorial</option>
+          <option value="5">Clinic</option>
+          <option value="0">Other</option>
+        </select><br>
+        <br><select id="evDuration">
+          <option value="" selected disabled hidden>Duration</option>
+          <option value="1">1 hour</option>
+          <option value="2">2 hours</option>
+          <option value="3">3 hours</option>
+          <option value="4">4 hours</option>
+          <option value="5">5 hours</option>
+          <option value="6">6 hours</option>
+          <option value="7">7 hours</option>
+          <option value="8">8 hours</option>
+        </select><br>
+        <br>
+        <button type="Button" class="yButton" onclick="addEventConf()">
+          Add Event
+        </button>
+      </div>
+    </div>
+    <br>
+    <footer>
+      <p id = "logoutButton"><button type="Button" class="yButton" onclick="logoutClick()">Logout</button></p>
+      <p>Developed by W4, The University of Manchester</p>
+    </footer>
+    <script>
+    var addEventForm = document.getElementById('addEventForm');
+    var addEventButton = document.getElementById('addEvButton');
+    var delEventButton = document.getElementById('delEvButton');
+    addEventButton.style.display = 'none';
+    delEventButton.style.display = 'none';
+    addEventForm.style.display = 'none';
+    var JSONData = localStorage.getItem("JSON");
+    var parsedJSONData = JSON.parse(JSONData);
+    var modificationType;
+    if(parsedJSONData == null)
+    {
+      location.assign("./error.html");
+    }
+    var testLogin = new XMLHttpRequest();
+    testLogin.onreadystatechange = function()
+    {
+      if (testLogin.readyState == 4 && testLogin.status == 200)
+      {
+        var testResponse = JSON.parse(this.responseText);
+        if(testResponse["error"] == true)
+        {
+          location.assign("./error.html");
+        }
+      }
+    }
+    testLogin.open("POST", "https://unibrowser-api.herokuapp.com/testLogin", true);
+    testLogin.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    testLogin.setRequestHeader("Cache-Control", "no-cache");
+    if(localStorage.getItem("userType") == "student")
+    {
+      testLogin.send("token="+parsedJSONData["payload"]["token"]);
+      delEventButton.style.display = 'inline';
+      addEventButton.style.display = 'inline';
+    }
+    else if(!(localStorage.getItem("userType") == "guest"))
+    {
+      location.assign("./error.html");
+    }
+
+    var customise = new XMLHttpRequest();
+    customise.onreadystatechange = function()
+    {
+      if (customise.readyState == 4 && customise.status == 200)
+      {
+        var customiseResponse = JSON.parse(this.responseText);
+        if(customiseResponse["error"] == true)
+        {
+          location.assign("./error.html");
+        }
+      }
+    }
+
+    function deleteEvent()
+    {
+      modificationType=1;
+      document.getElementById("addEvButton").style.backgroundColor = "";
+      document.getElementById("delEvButton").style.backgroundColor = "crimson";
+      addEventForm.style.display = 'none';
+    }
+    function addEvent()
+    {
+      modificationType=2;
+      document.getElementById("addEvButton").style.backgroundColor = "green";
+      document.getElementById("delEvButton").style.backgroundColor = "";
+      addEventForm.style.display = 'none';
+    }
+    function addEventConf()
+    {
+      //var addEvName = document.getElementById(evName).value;
+      //var addEvLocation = document.getElementById(evLocation).value;
+      //var addEvType = document.getElementById(evType).value;
+      var addEvDuration = document.getElementById("evDuration").value;
+      var addEvStart = document.getElementById("addEvStartTime").innerHTML;
+      var addEvEndTime = +addEvStart.slice(-2) + +addEvDuration;
+      if(addEvEndTime>17){
+        alert("You cannot have an event that finishes after 17:00");
+      }
+      else
+      {
+        customise.open("POST", "https://unibrowser-api.herokuapp.com/customiseTimetable", true);
+        customise.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        customise.setRequestHeader("Cache-Control", "no-cache");
+        customise.send("action=creation");
+      }
+    }
+    function cellClick(id)
+    {
+      if(modificationType==1)
+      {
+        if(!(document.getElementById(id).innerHTML == ""))
+        {
+          var eventID = document.getElementById(id).title;
+          customise.open("POST", "https://unibrowser-api.herokuapp.com/customiseTimetable", true);
+          customise.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          customise.setRequestHeader("Cache-Control", "no-cache");
+          customise.send("action=delete&eventId="+eventID);
+          document.getElementById(id).innerHTML = "";
+          document.getElementById(id).title = "";
+        }
+      }
+      else if(modificationType==2)
+      {
+        document.getElementById("addEvStartTime").innerHTML = id;
+        addEventForm.style.display = 'block';
+      }
+    }
+    //Code to populate timetable
+    var weekday = new Array(7);
+      weekday[0] = "Sunday";
+      weekday[1] = "Monday";
+      weekday[2] = "Tuesday";
+      weekday[3] = "Wednesday";
+      weekday[4] = "Thursday";
+      weekday[5] = "Friday";
+      weekday[6] = "Saturday";
+    var events = new Array(6);
+      events[0] = "Default";
+      events[1] = "Lecture";
+      events[2] = "Lab";
+      events[3] = "Examples";
+      events[4] = "Tutorial";
+      events[5] = "Clinic";
+    for(var eventNo=0; eventNo<parsedJSONData["payload"]["timetable"].length; eventNo++)
+    {
+      var d = new Date(parsedJSONData["payload"]["timetable"][eventNo]["startTime"]);
+      var day = weekday[d.getDay()];
+      var time = d.getHours();
+      var box = day + time;
+      var row = time;
+      var nextBox = day + time + 1;
+
+      /*if(parsedJSONData["payload"]["timetable"][eventNo]["type"]==2)
+      {
+        document.getElementById(box).rowSpan = "2";
+        var toDelete = document.getElementById(row+1);
+        toDelete.deleteCell(d.getDay());
+      }*/
+
+      document.getElementById(box).innerHTML = parsedJSONData["payload"]["timetable"][eventNo]["name"]+"<br>"+
+                                               events[parsedJSONData["payload"]["timetable"][eventNo]["type"]]+"<br>"+
+                                               parsedJSONData["payload"]["timetable"][eventNo]["location"];
+      document.getElementById(box).title = parsedJSONData["payload"]["timetable"][eventNo]["id"];
+    }
+    //Code to populate deadlines
+    if(parsedJSONData["payload"]["deadlines"].length>5)
+    {
+      var deadlineLength=5;
+    }
+    else
+    {
+      var deadlineLength=parsedJSONData["payload"]["deadlines"].length;
+    }
+    for(var deadlineNo=0; deadlineNo<deadlineLength; deadlineNo++)
+    {
+      var d = new Date(parsedJSONData["payload"]["deadlines"][deadlineNo]["date"]);
+      var date = d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear();
+      var time = d.getHours()+"."+d.getMinutes();
+
+      var box = "d" + deadlineNo;
+
+      document.getElementById(box).innerHTML = date+"<br>"+time+"<br>"+
+      parsedJSONData["payload"]["deadlines"][deadlineNo]["exerciseName"];
+    }
+    //Code to log the user out of the website and return to index
+    function logoutClick()
+    {
+      var logout = new XMLHttpRequest();
+      logout.open("POST", "https://unibrowser-api.herokuapp.com/logout" , true);
+      logout.setRequestHeader("Cache-Control", "no-cache");
+      logout.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      logout.send("token="+parsedJSONData["payload"]["token"]);
+      document.getElementById("leftPane").innerHTML = "";
+      document.getElementById("rightPane").innerHTML = "<h1><a href = \"index.html\">Return to index</a><h1>";
+      document.getElementById("logoutButton").innerHTML = "";
+      localStorage.setItem("userType", null);
+    }
+    </script>
+  </body>
+</html>
